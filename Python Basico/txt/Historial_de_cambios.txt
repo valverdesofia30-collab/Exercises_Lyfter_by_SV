@@ -1,0 +1,5 @@
+The first commit was add . This commit add a new file or folder at the GitHub repository
+The git status commit show me the branch of "past exercises" and all changes
+After that I needed to organize my folder of "Python Basico" and I used again the add . commit to add the changes
+I used the git -m commit to give an instruction of my changes in my folder
+I entered the push commit to upload the changes in GitHub
