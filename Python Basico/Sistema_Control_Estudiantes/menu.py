@@ -1,0 +1,11 @@
+def show_menu():
+    print("Please select an option")
+    print("\n1. Add a students")
+    print("2. Show all students")
+    print("3. The top 3 of better students grades")
+    print("4. General Average")
+    print("5. Export students to CSV")
+    print("6. Import students from CSV")
+    print("7. Delete a student")
+    print("8. Show failed students")
+    print("9. Exit to the Student Control System")
