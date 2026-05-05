@@ -1,6 +1,6 @@
 def show_menu():
     print("Please select an option")
-    print("\n1. Add a students")
+    print("\n1. Add a student")
     print("2. Show all students")
     print("3. The top 3 of better students grades")
     print("4. General Average")

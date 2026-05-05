@@ -9,6 +9,7 @@ def add_students(students):
             print("Invalid name. It must not be empty or contain numbers. Please try again.")
             
     while True:
+        
         class_group = input("Enter the student class group: ").strip()
         
         if is_valid_section(class_group):
@@ -115,7 +116,7 @@ def delete_student(students):
     print("Student not found. Please check the name and class group and try again.")
 
 
-def show_failed_students(students):
+def show_failed_student(students):
     if not students:
         print("No students registered.")
         return
@@ -135,7 +136,7 @@ def show_failed_students(students):
             failed_subjects.append(("Science", student["science_grade"]))
             
         if failed_subjects:
-            failed_students_found = True
+            failed_student_found = True
             print(f"\nName: {student['name']}")
             print(f"Class Group: {student['class_group']}")
             print("Failed Subjects: ")
