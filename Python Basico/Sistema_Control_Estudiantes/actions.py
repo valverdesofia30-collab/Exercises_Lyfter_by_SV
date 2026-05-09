@@ -116,7 +116,7 @@ def delete_student(students):
     print("Student not found. Please check the name and class group and try again.")
 
 
-def show_failed_student(students):
+def show_failed_students(students):
     if not students:
         print("No students registered.")
         return
@@ -140,7 +140,7 @@ def show_failed_student(students):
             print(f"\nName: {student['name']}")
             print(f"Class Group: {student['class_group']}")
             print("Failed Subjects: ")
-            
+        
             for subject, grade in failed_subjects:
                 print(f" - {subject}: {grade}")
                 
