@@ -37,6 +37,7 @@ def add_students(students):
         social_studies_grade,
         science_grade
     )
+    
     students.append(student)
     print("Student added successfully!")
 
