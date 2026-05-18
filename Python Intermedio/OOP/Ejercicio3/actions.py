@@ -1,3 +1,4 @@
+from student import Student
 def add_students(students):
     
     while True:
@@ -26,17 +27,16 @@ def add_students(students):
     english_grade = get_valid_grade("English")
     social_studies_grade = get_valid_grade("Social Studies")
     science_grade = get_valid_grade("Science")
-    average= (spanish_grade + english_grade + social_studies_grade + science_grade) /4
     
-    student = {
-        "name": name,
-        "class_group": class_group,
-        "spanish_grade": spanish_grade,
-        "english_grade": english_grade,
-        "social_studies_grade": social_studies_grade,
-        "science_grade": science_grade,
-        "average": average
-    }
+    
+    student = Student(
+        name,
+        class_group,
+        spanish_grade,
+        english_grade,
+        social_studies_grade,
+        science_grade
+    )
     students.append(student)
     print("Student added successfully!")
 
@@ -49,7 +49,7 @@ def show_general_average(students):
     total_average = 0
     
     for student in students:
-        total_average += student["average"]
+        total_average += student.average_grade()
         
     general_average = total_average / len(students)
     
@@ -75,24 +75,24 @@ def show_students(students):
         return
     
     for student in students:
-        print(f"Name: {student['name']}, Class Group: {student['class_group']}, Spanish Grade: {student['spanish_grade']}, English Grade: {student['english_grade']}, Social Studies Grade: {student['social_studies_grade']}, Science Grade: {student['science_grade']}")
-        
-        
+        print(f"Name: {student.name}, Class Group: {student.class_group}, Spanish Grade: {student.spanish_grade}, English Grade: {student.english_grade}, Social Studies Grade: {student.social_studies_grade}, Science Grade: {student.science_grade}")
+
+
 def show_top_students (students):
     if not students:
         print("No students registered.")
         return
     
     
-    sorted_students = sorted(students, key=lambda student:student["average"], reverse=True)
+    sorted_students = sorted(students, key=lambda student:student.average_grade(), reverse=True)
     top_students = sorted_students[:min(3, len(students))]
     
     if len(students) < 3:
         print("Less than 3 students available, showing all available students.")
     
     for student in top_students:
-        print(f"Name: {student['name']}, Class Group: {student['class_group']}, Average Grade: {student['average']}")
-        
+        print(f"Name: {student.name}, Class Group: {student.class_group}, Average Grade: {student.average_grade()}")
+
 
 def delete_student(students):
     if not students:
@@ -103,7 +103,7 @@ def delete_student(students):
     class_group = input("Enter the student class group to delete: ")
     
     for student in students:
-        if student["name"].lower() == name.lower() and student["class_group"].lower() == class_group.lower():
+        if student.name.lower() == name.lower() and student.class_group.lower() == class_group.lower():
             confirm = input(f"Are you sure you want to delete {name} from {class_group}? (yes/no): ")
             
             if confirm.lower() == "yes":
@@ -126,19 +126,19 @@ def show_failed_students(students):
     for student in students:
         failed_subjects = []
         
-        if student["spanish_grade"] < 60:
-            failed_subjects.append(("Spanish", student["spanish_grade"]))
-        if student["english_grade"] < 60:
-            failed_subjects.append(("English", student["english_grade"]))
-        if student["social_studies_grade"] < 60:
-            failed_subjects.append(("Social Studies", student["social_studies_grade"]))
-        if student["science_grade"] < 60:
-            failed_subjects.append(("Science", student["science_grade"]))
+        if student.spanish_grade < 60:
+            failed_subjects.append(("Spanish", student.spanish_grade))
+        if student.english_grade < 60:
+            failed_subjects.append(("English", student.english_grade))
+        if student.social_studies_grade < 60:
+            failed_subjects.append(("Social Studies", student.social_studies_grade))
+        if student.science_grade < 60:
+            failed_subjects.append(("Science", student.science_grade))
             
         if failed_subjects:
             failed_student_found = True
-            print(f"\nName: {student['name']}")
-            print(f"Class Group: {student['class_group']}")
+            print(f"\nName: {student.name}")
+            print(f"Class Group: {student.class_group}")
             print("Failed Subjects: ")
         
             for subject, grade in failed_subjects:
@@ -175,6 +175,6 @@ def is_valid_section(section):
 
 def student_exists(students, name, class_group):
     for student in students:
-        if student["name"].lower() == name.lower() and student["class_group"].lower() == class_group.lower():
+        if student.name.lower() == name.lower() and student.class_group.lower() == class_group.lower():
             return True
     return False    
