@@ -1,6 +1,9 @@
 from menu import show_menu
+
 from actions import add_students, show_students, show_top_students, show_general_average, delete_student, show_failed_students
+
 from data import export_students_to_csv, import_students_from_csv
+
 
 def main():
     print ("¡Welcome to the Student Control System of Lyfter!")
@@ -8,6 +11,7 @@ def main():
     students = []
     
     while True:
+        
         show_menu()
         option = input("Enter the option number: ")
         

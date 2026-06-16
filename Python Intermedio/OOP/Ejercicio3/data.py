@@ -1,7 +1,6 @@
 from student import Student
 import csv
 
-
 def export_students_to_csv(students):
     if not students:
         print("No students registered to export.")
@@ -10,7 +9,7 @@ def export_students_to_csv(students):
     with open("students.csv", "w", newline="", encoding="utf-8") as file:
         writer = csv.writer(file)
 
-        # Header
+
         writer.writerow([
             "Name",
             "Class Group",
@@ -20,6 +19,7 @@ def export_students_to_csv(students):
             "Science Grade",
             "Average"
         ])
+
 
         # Student data
         for student in students:
@@ -68,7 +68,8 @@ def import_students_from_csv(students):
                     float(social_studies_grade),
                     float(science_grade)
                 )
-
+                
+                
                 temp_students.append(student)
 
         if not has_data:
