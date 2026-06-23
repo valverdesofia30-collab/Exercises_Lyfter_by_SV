@@ -6,8 +6,8 @@ class Student:
         self.english_grade = english_grade
         self.social_studies_grade = social_studies_grade
         self.science_grade = science_grade
-        
+    
+
     def average_grade(self):
         total = self.spanish_grade + self.english_grade + self.social_studies_grade + self.science_grade
         return total / 4
-   
