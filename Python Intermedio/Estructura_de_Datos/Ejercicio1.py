@@ -66,4 +66,3 @@ print("POP")
 
 my_stack.pop()
 my_stack.print_structure()
-
