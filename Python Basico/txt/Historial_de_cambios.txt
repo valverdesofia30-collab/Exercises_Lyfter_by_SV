@@ -1,0 +1,17 @@
+Commit: 3603690
+What changed:
+Files were added to the project
+
+Why:
+To save new changes made in the 0233 branch
+
+---
+
+Commit: 5966984
+What changed:
+The project was updated
+
+Why:
+To improve the content
+
+---
