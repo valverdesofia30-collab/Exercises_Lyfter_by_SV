@@ -21,8 +21,8 @@ def bubble_sort(list_to_sort):
                 
                 has_made_changes = True
                 
-    if not has_made_changes:
-        return
+        if not has_made_changes:
+            return
                 
 my_test_list = [-5, 6, 10, 2, 1, 7, -8]
 bubble_sort(my_test_list)
