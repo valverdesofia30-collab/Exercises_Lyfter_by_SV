@@ -36,9 +36,9 @@ def test_bubble_sort_empty_list():
     
 def test_bubble_sort_not_list():
 
-    #Arrange
+    # Arrange
     not_list = "Is not a list"
 
-    #Act - Assert
+    # Act - Assert
     with pytest.raises(TypeError):
-        bubble_sort(not_list)       
+        bubble_sort(not_list)  

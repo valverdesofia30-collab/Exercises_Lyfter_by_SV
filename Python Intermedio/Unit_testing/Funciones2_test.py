@@ -1,5 +1,5 @@
 def text(first_text):
-    first_text= "Hello Daniel"
+    
     reversed_text= ""
     
     
